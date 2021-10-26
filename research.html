@@ -1,0 +1,263 @@
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+<title>Matthew Whitehead - Research Projects</title>
+</head>
+
+
+<body>
+<center>
+  <div class="main">
+    <p class="titles">
+      <b>Matthew Whitehead - Research Projects<br>
+        <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="teaching.html">Teaching</a>&nbsp;&nbsp;&nbsp;
+        <a href="research.html">Research</a>&nbsp;&nbsp;&nbsp;
+        <a href="matthew_whitehead_cv.pdf">CV</a>
+         <br>
+       </b>
+    </p>
+
+
+
+<hr>
+
+<!--***************************************************-->
+
+
+
+<p class="main">
+
+<b>Function-Calling Neural Network (2016)</b><br>
+<i>Collaboration with Trevor Barron</i>
+
+<figure>
+  <img src="images/functioncalling2.png" width=450>
+  <figcaption>A Recurrent Function-Calling ANN</figcaption>
+</figure>
+
+<p class="main">
+This project involves a novel kind of recurrent neural network architecture that will allow the network to leverage existing libraries of software functions to solve difficult real-world problems more efficiently.
+</p>
+
+<p class="main">
+The network uses <a href="https://papers.nips.cc/paper/5542-recurrent-models-of-visual-attention.pdf">recent developments in training non-differentiable neural networks</a> to choose which low-level functions to call in order to solve algorithmic problems.  For example, if the network were trying to learn to compute the GCD of two numbers, then it might employ the use of a basic subtraction function along with simple comparison functions to create an implementation of Euclid's Algorithm.  Learning which functions to call is then similar to deciding which part of the input data to pay attention to and network attention is currently a very active area of machine learning research.
+</p>
+
+<p class="main">
+<b>This work is currently under development and we hope to have strong preliminary results in the spring of 2017.</b>
+</p>
+
+<br>
+<hr>
+<br>
+
+<!--***************************************************-->
+
+
+
+
+<p class="main">
+
+<b>Visualizing Cancer-Related Patents (2016)</b><br>
+<i>Collaboration with Daniel Johnson</i>
+
+<figure>
+  <img src="images/moonshot_screenshot.png" width=400>
+  <figcaption>Example plot using the keyword search: "cell"</figcaption>
+</figure>
+
+<p class="main">
+For work on this project, we recently created a prototype online interactive visualization tool for analyzing the semantic proximities of US patent documents that are related to cancer research and treatments.
+</p>
+
+<p class="main">Our software allows the user to perform keyword searches and
+then presents visualizations of sets of relevant patent documents clustered by semantic similarity. Semantic similarity is calculated using a combination of word embeddings obtained using the skip-gram algorithm and the t-SNE dimensionality reduction algorithm.
+</p>
+
+<p class="main">
+The user may then select individual points in the cluster to view more detailed patent information. This process allows the user to explore the connections between related patents and see more general trends in the semantic shape of the technological space. It is our hope that this tool may serve as one of the starting points for data analysis leading to future innovative approaches to cancer treatment.
+</p>
+
+<p class="main">
+<b>This work <a href="http://cs.coloradocollege.edu/~mwhitehead/CancerMoonshot/documents/moonshot.pdf">was submitted in the USPTO Cancer Moonshot Competition</a> and received an honorable mention for <a href="https://www.uspto.gov/about-us/news-updates/uspto-announces-cancer-moonshot-challenge-winners">"the unique and innovative methodology applied."</a></b>
+
+<br>
+<hr>
+<br>
+
+<!--***************************************************-->
+
+
+
+
+<p class="main">
+
+<b>Deep Reinforcement Learning in a 3-D Environment (2016)</b><br>
+<i>Collaboration with Trevor Barron and Alan Yeung</i>
+
+<figure>
+  <img src="images/blockworld.png" width=350>
+  <figcaption>A Reinforcement Learning Agent<br>
+  in a Blockworld Environment</figcaption>
+</figure>
+
+<p class="main">
+We worked on a reinforcement learning agent based on the highly successful <a href="https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf">DeepMind Atari research</a> that learned to complete a variety of control tasks in a 3-D blockworld environment similar to the popular game, Minecraft.
+</p>
+
+<p class="main">
+The agent learns to follow a dangerous winding path, collect a variety of blocks in a complex world, and climb to the top of nearby high mountains and it does this solely from processing the raw pixels of the game's visual display.  The agent utilizes a deep convolutional neural network to process the visual features present and a simple reward/penalty updating scheme common to reinforcement learning in order to optimize its performance over time.
+</p>
+
+<p class="main">
+<a href="https://www.youtube.com/watch?v=6jlaBD9LCnM">This video</a> shows the results with a trained reinforcement learning agent.
+</p>
+
+<p class="main">
+<b><a href="http://cs.coloradocollege.edu/~mwhitehead/files/mypapers/blockworld.pdf">This recent paper at IJCAI's DeepRL workshop</a> describes our work in more detail.  This project was partially supported by a generous hardware grant from NVIDIA.</b>
+</p>
+
+
+<br>
+<hr>
+<br>
+
+<!--***************************************************-->
+
+
+
+
+<p class="main">
+
+<b>Valuing Apple's Patents Using Word Embeddings (2015-2016)</b><br>
+<i>Collaboration with Daniel Johnson</i>
+
+<figure>
+  <img src="images/patents.png" width=350>
+  <!-- <img src="creativity.png" width=350> -->
+  <figcaption>Example visualization of patent breadth metric.<br>
+    The blue plot shows a <i>broader</i> patent.<br>
+    The red plot shows a <i>narrower</i> patent.
+  </figcaption>
+
+</figure>
+
+<p class="main">
+We recently looked at the importance of patent-related events to Apple's stock price.  We used artificial neural networks to generate semantic word embeddings to estimate patent creativity and breadth as complements to traditional economic measures of patent generality, originality, and significance.
+</p>
+
+<p class="main">
+Using a skip-gram model with negative sampling, we generated word and document embeddings for several hundred of Apple's patents.  Using the word embeddings for each patent document, we defined the patent's <i>breadth</i> as the hypervolume of its bounding box calculated across all embedding dimensions: &#x3a0; (max_i - min_i).  We defined each patent's measure of <i>creativity</i> as its document vector distance from the centroid of patent vectors in the same International Patent Classification (IPC) class.
+</p>
+
+<p class="main">
+  <b>
+<a href="http://cs.coloradocollege.edu/~mwhitehead/files/mypapers/apple.pdf">This recent paper at the R & D Management Conference 2016 "From Science to Society: Innovation and Value Creation"</a> describes our work in more detail.
+</b>
+</p>
+
+<br>
+<hr>
+<br>
+
+<!--***************************************************-->
+
+
+
+
+<p class="main">
+
+<b>Visualizing Stacked Autoencoder Language Learning (2015-2016)</b><br>
+<i>Collaboration with Trevor Barron</i>
+
+<figure>
+  <img src="images/wordcloud.png" width=350>
+  <figcaption>A wordcloud visualization of language learned by a deep ANN</figcaption>
+</figure>
+
+<p class="main">
+We created a tool to investigate and visualize how deep artificial neural networks can learn language.  We used autoencoder networks (networks that learn to reproduce their input as output under network size constraints) to learn word meanings by processing a large corpus of text data (Wikipedia).
+</p>
+
+<p class="main">
+
+  After processing large amounts of text data, the networks learn different language
+  features with representations stored within their hidden layers. We take these
+  trained networks and then generate images that help show each of the learned
+  language features. Our method is analogous to the methods used in computer
+  vision research, but since we are working with text data, we use a different visualization technique that incorporates word cloud images and t-SNE plots.  In particular, we use word clouds to see which words maximally activate certain artificial neurons within the model.  Then by examining the set of words associated with a single neuron we can gain some insight as to the semantic features being identified by that neuron.  We hope that these benefits will aid human understanding of deep networks and can help guide future
+  experiments.
+</p>
+
+<p class="main">
+<b><a href="http://cs.coloradocollege.edu/~mwhitehead/files/mypapers/wordclouds.pdf">This recent paper at the European Symposium on Artificial Neural Networks (ESANN 2016)</a> describes our work in more detail.
+This project was partially supported by a generous hardware donation from NVIDIA.
+</b>
+</p>
+
+<br>
+<hr>
+<br>
+
+<!--***************************************************-->
+
+
+
+
+
+
+<p class="main">
+
+<b>Practical Fault Tolerant Cellular Automata (2015)</b><br>
+<i>Collaboration with Steven Janke</i>
+
+<figure>
+  <img src="images/langton_loop.png" width=250>
+  <figcaption>Langton's Self-Reproducing Loop Cellular Automaton</figcaption>
+</figure>
+
+<p class="main">
+We have been recently conducting research on fault tolerant cellular automata.
+</p>
+
+<p class="main">
+
+Cellular automata often suffer from a level of brittleness that
+makes them susceptible to even the smallest unexpected environmental
+changes. We proposed a method of converting
+CAs into more robust structures called meta-CAs that utilize
+cell redundancy along with added rules to correct errors and
+reproduce the functionality of the original CA. We showed that
+the use of these meta-CAs can greatly increase the probability
+of CAs being intact when executing in an environment where
+cells fail on each step with a small probability.
+</p>
+
+<p class="main">
+  We proposed a
+  general procedure for converting a regular CA into a fault tolerant
+  CA. The procedure involves replacing each original
+  cell with a metacell which is a square array of cells with additional
+  states and rules. The new CA is still a normal CA
+  where each cell executes a common set of instructions. The
+  result is a cellular system that mirrors biological cells and
+  possibly could evolve from less robust systems.</p>
+
+<p class="main">
+<b>
+<a href="http://cs.coloradocollege.edu/~mwhitehead/files/mypapers/alife.pdf">This recent paper at the European Conference on Artificial Life (ECAL 2015)</a> describes our work in more detail.
+</b>
+</p>
+
+<br>
+<hr>
+<br>
+
+<!--***************************************************-->
+
+
+
+</div>
