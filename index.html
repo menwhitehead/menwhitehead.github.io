@@ -12,12 +12,17 @@
 <center>
   <img src="media/neural_net_cut2.png" width=1000 style="top: -10px; opacity: 100%">
 
+  <!-- <figure class="left">
+    <img src="projects/deepq/tetris.gif" height=800>
+    <figcaption>My DQN playing Tetris</figcaption>
+  </figure> -->
+
   <div class="main">
 
 
 <br><br><br>
-<figure>
-  <img src="media/me.jpg" width=150 style="top: -10px;">
+<figure class="right">
+  <img src="media/me.jpg" width=150 style="top: -10px;" class="zoomA">
 </figure>
 <p class="titles">
   <b>Matthew Whitehead, Ph.D.<br>
@@ -42,9 +47,9 @@
 <p class="main">
     <b>About me</b>
 
-        <figure>
-          <img src="projects/deepq/tetris.gif" width=50>
-          <figcaption>My DQN playing Tetris</figcaption>
+        <figure class="right">
+          <img src="projects/deepq/tetris.gif" width=70>
+          <figcaption>My Tetris DQN</figcaption>
         </figure>
 
 <p class="main">
@@ -67,35 +72,7 @@ Below I briefly describe several selected projects I have worked on recently and
 <hr>
 <br>
 
-<p class="main">
 
-<b>Observational Neural Networks</b><br>
-
-<figure>
-  <img src="projects/observational_ann/mosaic.gif" width=300>
-  <figcaption>Observing sorted hidden weight strengths for four ANNs<br>while they learn simple polynomial functions</figcaption>
-</figure>
-
-<p class="main">
-This project involves training an ANN to observe the learning process (activations and change in weights) of another ANN.  The observer tries to figure out what the observee is trying to learn and then the hope is that it would able to either explain in higher-level terms what the observee is doing or offer suggestions for pre-existing library functions to call to solve the problem directly.
-</p>
-
-<p class="main">
-Here's a simple example.  Let's say the observee is trying to learn the square root function.  The observer has already been trained watching other networks try to learn the sqrt function in the past, so it is able to match the current observee's training process and suggest a sqrt function from an existing library to solve the problem.
-</p>
-
-<p class="main">
-One interesting aspect of this setup is that it doesn't even matter if ANNs are good at learning a particular function that exists in the library.  The observer could have seen how other ANNs tried to learn a particular function and then still be able to offer the actual library function to solve the problem.
-</p>
-
-
-<p class="main">
-This is ongoing work and currently we're trying to determine how hard it is to differentiate an ANN's learning process for sqrt vs. tangent vs. sorting numbers, etc.  One technique we're currently investigating is using the graph diffusion distance metric to offer an alternative way to match learning processes to library functions.
-</p>
-
-<br>
-<hr>
-<br>
 
 
 <!-- <p class="main">
@@ -127,13 +104,13 @@ The model uses transformer attention methods to choose low-level functions from 
 
 
 
-<p class="main">
+<p class="titles">
 
 <b>Natural Language Processing with US Patents</b><br>
 <i>Collaboration with Daniel Johnson</i>
 
-
-<figure>
+<p class="main">
+<figure class="right">
   <img src="projects/nlp_patents/B29_B31_G06.png" width=300>
   <figcaption>t-SNE plot of patent documents for <br>several IPC classifications </figcaption>
 </figure>
@@ -146,8 +123,8 @@ in International Patent Classification groups B29 (Working of Plastics) (light b
 <p class="main">
 I worked with Daniel Johnson to use NLP on patent documents in a couple of different ways.  We first downloaded a dataset of the full texts of about 1.5 million US patents.  We then used word2vec to generate semantic word embeddings for the dataset and then used those embeddings to estimate patent creativity and breadth as complements to traditional economic measures of patent generality, originality, and significance.
 
-<figure>
-  <img src="projects/nlp_patents/patents.png" width=400>
+<figure class="right">
+  <img src="projects/nlp_patents/patents.png" width=300>
   <figcaption>Example visualization of patent breadth metric.<br>
     The blue plot shows a <i>broader</i> patent.<br>
     The red plot shows a <i>narrower</i> patent.
@@ -166,8 +143,8 @@ We tested our new economic metrics on several hundred of Apple's patents.  Using
 We also used the patent document word embeddings to create a prototype online interactive visualization tool for analyzing the semantic proximities of US patent documents that are related to cancer research and treatments.
 </p>
 
-<figure>
-  <img src="projects/nlp_patents/moonshot_screenshot.png" width=400>
+<figure class="middle">
+  <img src="projects/nlp_patents/moonshot_screenshot.png" width=500>
   <figcaption>Cancer-related patent semantic search </figcaption>
 </figure>
 
@@ -192,18 +169,28 @@ This work <a href="media/mypapers/cancer_patents.pdf">was submitted in the USPTO
 
 
 
-<p class="main">
+<p class="titles">
 
 <b>Deep Reinforcement Learning in a 3-D Environment</b><br>
 <i>Collaboration with Trevor Barron and Alan Yeung</i>
 
+<p class="main">
+We built a Deep Q Network (DQN) reinforcement learning agent based on the highly successful <a href="https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf">DeepMind Atari research</a> that learned to complete a variety of control tasks in a 3-D blockworld environment similar to the popular game, Minecraft.
+</p>
+
+
 <figure>
-  <img src="projects/deepq/network1.png" width=350>
+  <img src="projects/deepq/network1.png" width=500>
   <figcaption>CNN for DQN<br>
 (2 to 16 conv. layers used)
   </figcaption>
 </figure>
 
+
+
+<p class="main">
+The model used a deep convolutional neural network based on the well-known <a href="https://arxiv.org/abs/1409.1556">VGG architecture</a>.  We were interested to see if this type of reinforcement learning agent would be able to learn to navigate a more complex 3-dimensional space using only visual input.
+</p>
 
 <!-- <figure>
   <img src="projects/deepq/depth_grid2.png" width=250>
@@ -215,8 +202,8 @@ This work <a href="media/mypapers/cancer_patents.pdf">was submitted in the USPTO
   </figcaption>
 </figure> -->
 
-<figure>
-  <video width="250" height="200" controls>
+<figure class="middle">
+  <video width="400" height="400" controls>
   <source src="projects/deepq/big_world_agent.mp4" type="video/mp4">
   </video>
    <figcaption>Strip-Miner Agent <br>(Reward for breaking "dirt" blocks)</figcaption>
@@ -228,21 +215,15 @@ This work <a href="media/mypapers/cancer_patents.pdf">was submitted in the USPTO
   <figcaption>Strip-Miner Agent <br>(Reward for breaking "dirt" blocks)</figcaption>
 </figure> -->
 
-<p class="main">
-We built a Deep Q Network (DQN) reinforcement learning agent based on the highly successful <a href="https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf">DeepMind Atari research</a> that learned to complete a variety of control tasks in a 3-D blockworld environment similar to the popular game, Minecraft.
-</p>
 
-<p class="main">
-The model used a deep convolutional neural network based on the well-known <a href="https://arxiv.org/abs/1409.1556">VGG architecture</a>.  We were interested to see if this type of reinforcement learning agent would be able to learn to navigate a more complex 3-dimensional space using only visual input.
-</p>
 
 <!-- <figure>
   <img src="projects/deepq/narrow_walkway.gif" width=250>
   <figcaption>Narrow-Walkway Agent <br>(Reward for forward progress)</figcaption>
 </figure> -->
-
-<figure>
-  <video width="250" height="200" controls>
+<p><br>
+<figure class="middle">
+  <video width="400" height="400" controls>
   <source src="projects/deepq/animation_deep_walkwaye.mp4" type="video/mp4">
   </video>
    <figcaption>Narrow-Walkway Agent <br>(Reward for forward progress)</figcaption>
@@ -278,12 +259,14 @@ The agent learned to follow a narrow winding path, collect a variety of blocks i
 
 
 
-<p class="main">
+<p class="titles">
 
 <b>Visualizing Stacked Autoencoder Language Learning </b><br>
 <i>Collaboration with Trevor Barron</i>
 
-<figure>
+<p class="main">
+
+<figure class="middle">
   <img src="projects/wordclouds/wordcloud.png" width=450>
   <figcaption>A wordcloud visualization of language learned by a deep ANN subgraph</figcaption>
 </figure>
@@ -305,6 +288,38 @@ We created a tool to investigate and visualize how some deep artificial neural n
 <b><a href="media/mypapers/wordclouds.pdf">This paper at the European Symposium on Artificial Neural Networks</a> describes our work in more detail.
 This project was partially supported by a generous hardware donation from NVIDIA.
 </b>
+</p>
+
+<br>
+<hr>
+<br>
+
+<p class="titles">
+
+<b>Observational Neural Networks</b><br>
+
+<p class="main">
+
+<figure class="right">
+  <img src="projects/observational_ann/mosaic.gif" width=300>
+  <figcaption>Observing sorted hidden weight strengths for four ANNs<br>while they learn simple polynomial functions</figcaption>
+</figure>
+
+<p class="main">
+This project involves training an ANN to observe the learning process (activations and change in weights) of another ANN.  The observer tries to figure out what the observee is trying to learn and then the hope is that it would able to either explain in higher-level terms what the observee is doing or offer suggestions for pre-existing library functions to call to solve the problem directly.
+</p>
+
+<p class="main">
+Here's a simple example.  Let's say the observee is trying to learn the square root function.  The observer has already been trained watching other networks try to learn the sqrt function in the past, so it is able to match the current observee's training process and suggest a sqrt function from an existing library to solve the problem.
+</p>
+
+<p class="main">
+One interesting aspect of this setup is that it doesn't even matter if ANNs are good at learning a particular function that exists in the library.  The observer could have seen how other ANNs tried to learn a particular function and then still be able to offer the actual library function to solve the problem.
+</p>
+
+
+<p class="main">
+This is ongoing work and currently we're trying to determine how hard it is to differentiate an ANN's learning process for sqrt vs. tangent vs. sorting numbers, etc.  One technique we're currently investigating is using the graph diffusion distance metric to offer an alternative way to match learning processes to library functions.
 </p>
 
 <br>

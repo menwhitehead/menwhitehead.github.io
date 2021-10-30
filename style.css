@@ -44,7 +44,27 @@ p.main
 }
 
 
-figure
+figure.middle
+{
+    border-style:solid;
+    border-width:1px;
+    border-color: #bbbbbb;
+    padding: 10px;
+    #float: right;
+    text-align: center;
+}
+
+figure.left
+{
+    border-style:solid;
+    border-width:1px;
+    border-color: #bbbbbb;
+    padding: 10px;
+    float: left;
+    text-align: center;
+}
+
+figure.right
 {
     border-style:solid;
     border-width:1px;
@@ -118,3 +138,23 @@ li:hover {
   background: #eee;
   cursor: pointer;
 }
+
+hr {
+  border: 8px solid #e0e0e0;
+  border-radius: 5px;
+
+}
+
+
+<style>
+.zoomA {
+  #width: 600px;
+  height: auto;
+  /* ease | ease-in | ease-out | linear */
+  transition: transform ease-in-out 2.3s;
+}
+.zoomA:hover {
+  transform: scale(1.5);
+}
+</style>
+
